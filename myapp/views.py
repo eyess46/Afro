@@ -381,12 +381,9 @@ def profile(request):
 
 
 def paypal_success(request):
-    # This view is called when the user successfully completes the PayPal payment
-    # You can perform any necessary actions here, such as updating the order status
-    # and displaying a success message to the user
+    
     return render(request, 'paypal_success.html')
 
 def paypal_cancel(request):
-    # This view is called when the user cancels the PayPal payment
-    # You can redirect the user to a specific page or display a message
+    
     return render(request, 'paypal_cancel.html')
