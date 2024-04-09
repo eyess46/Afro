@@ -1,0 +1,340 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Afroblend - LogIn</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/logo1.jpeg' %}" rel="icon">
+  <link href="{% static 'img/logo1.jpeg' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Property Search Section ======= -->
+  <!-- End Property Search Section -->>
+
+  <!-- ======= Header/Navbar ======= -->
+  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+    <div class="container">
+      <a href=" / " class="navbar-brand p-0">
+        <img class="logo mb-50" src="{% static 'assets/img/logo1.jpeg' %}" width="250" height="103" alt="Logo">
+       </a>      
+       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link active" href=" / ">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'contact' %}">Contact</a>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'logout' %}">LogOut</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">Register</a></li>
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'login' %}">Login</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+
+      
+
+    </div>
+  </nav><!-- End Header/Navbar -->
+
+  <main id="main">
+
+    <!-- ======= Intro Single ======= -->
+    <section class="intro-single">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="title-single-box">
+              <h1 class="title-single">Please LogIn</h1>
+              {% for message in messages %}
+                      <h2 align="center">{{ message }}</h2>
+                  {% endfor %}
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-4">
+            <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href=" / ">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Intro Single-->
+
+    <!-- ======= About Section ======= -->
+    <section class="section-about">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 position-relative">
+            <div align="center" class="about-img-box">
+              <img src="{% static 'assets/img/login.jpg' %}" width="1000" height="300" object-fit="cover" alt="">
+            </div>
+            <div align="left" class="sinse-box">
+              <h3 class="sinse-title">Afroblend
+                <span></span>
+                <br>
+              </h3>
+              <p></p>
+            </div>
+          </div>
+          <div align="center">
+            <div class="row">
+              <div class="col-md-6 col-lg-5">
+              </div>
+              <div class="col-lg-2  d-none d-lg-block position-relative">
+                <div class="title-vertical d-flex justify-content-start">
+                </div>
+              </div>
+              <div align="center">
+                <div class="title-box-d">
+                  <h3 class="title-d">
+                    <span class="color-d"></span>
+                  </h3>
+                </div>
+                <div align="center">
+                  <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %} {% for message in messages %}
+                    <h2 align="center">{{ message }}</h2>
+                    {% endfor %}
+
+                    <div class="form-group">
+                      {{ form.username.label_tag }} {{ form.username }}
+                    </div>
+
+                    <div class="form-group">
+                      {{ form.password.label_tag }} {{ form.password }}
+                    </div>
+
+                    <button
+                      class="btn btn-primary rounded-pill py-3 px-5 mt-5"
+                      type="submit"
+                    >
+                      Login
+                    </button>
+
+                    <h3 class="form-text text-muted mt-3">
+                      Forgot Your Password?
+                      <a href="{% url 'password_reset' %}">CLICK HERE</a>
+                    </h3>
+                    <h3 class="form-text text-muted mt-3">Don't have an account? <a href="{% url 'register' %}">Register Here</a></h3><br>
+                    <small class="form-text text-muted mt-3">
+                      We don't spam customers. Check our
+                      <a href="#">Privacy Policy</a>
+                    </small>
+                  </form>
+            </div>
+              <style>
+                  form div.form-group {
+                      display: flex;
+                      align-items: center;
+                      margin-bottom: 5px;
+                  }
+                  
+                  form div.form-group label {
+                      width: 100px; /* Adjust as needed */
+                      font-weight: bold;
+                  }
+                  
+                  form div.form-group input,
+                  form div.form-group select {
+                      flex: 1;
+                      padding: 5px;
+                      border: 1px solid #ccc;
+                      border-radius: 2px;
+                      margin-left: 5px;
+                      max-width: 300px; /* Adjust the width as desired */
+                  }
+              </style>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======Team Section ======= -->
+    
+    <!-- End About Section-->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <section class="section-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          <div class="widget-a">
+            <div class="w-header-a">
+              <em><h3 class="w-title-a text-brand">Afroblend</h3></em>
+            </div>
+            <div class="w-body-a">
+              <p class="w-text-a color-text-a">
+              <em> <p class="w-text-a color-text-a">
+                  We are Always Available To Respond To You!
+                </p></em>
+              </p>
+            </div>
+            <div class="w-footer-a">
+              <ul class="list-unstyled">
+              <em><li class="color-a">
+                  <span class="color-text-a">Phone .</span> +44 0774 1663 860
+                </li></em>
+              <em><li class="color-a">
+                  <span class="color-text-a">Email .</span> info@afroblend.co.uk
+                </li></em>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 section-md-t3">
+          <div class="widget-a">
+            <div class="w-header-a">
+            <em><h3 class="w-title-a text-brand">Know Us Better</h3></em>
+            </div>
+            <div class="w-body-a">
+              <div class="w-body-a">
+                <ul class="list-unstyled">
+                  
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="{% url 'contact' %}">Contact</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="{% url 'privacy_policy' %}">Privacy Policy</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 section-md-t3">
+          <div class="widget-a">
+            <div class="w-header-a">
+            <em><h3 class="w-title-a text-brand">International Officies</h3></em>
+            </div>
+            <div class="w-body-a">
+              <ul class="list-unstyled">
+                
+                <li class="item-list-a">
+                  <i class="bi bi-chevron-right"></i> United Kingdom</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="bi bi-chevron-right"></i> Africa</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="nav-footer">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href=" / ">Home</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="{% url 'contact' %}">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="socials-a">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-facebook" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-twitter" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-instagram" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="copyright-footer">
+            <p class="copyright color-text-a">
+              &copy; Copyright
+              <span class="color-a">Afroblend</span> All Rights Reserved.<br>
+              <li class="list-inline-item">
+                <a href=" / ">www.afroblend.co.uk</a>
+              </li>
+            </p>
+          </div>
+          <div class="credits">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script>
+    document.getElementById('locationDropdown').addEventListener('change', function() {
+        const selectedOption = this.options[this.selectedIndex];
+        document.getElementById('searchInput').value = selectedOption.textContent;
+    });
+</script>
+
+</body>
+
+</html>

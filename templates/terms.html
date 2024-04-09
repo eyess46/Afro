@@ -1,0 +1,306 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Afroblend || Terms Of Services</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <link href="{% static 'img/logo1.jpeg' %}" rel="icon">
+        <link href="{% static 'img/logo1.jpeg' %}" rel="apple-touch-icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+
+    <body>
+
+        
+
+
+        <!-- Navbar start -->
+        <div class="container-fluid fixed-top">
+            <div class="container topbar bg-primary d-none d-lg-block">
+                <div class="d-flex justify-content-between">
+                    <div class="top-info ps-2">
+                        <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a class="text-white">Quarter 19 GRA Nsukka, Enugu, Nigeria</a></small>
+                        <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="afroblend.co.uk" class="text-white">info@afroblend.co.uk</a></small>
+                    </div>
+                    <div class="top-link pe-2">
+                        <small class="me-3"><i class="fas fa-phone-alt me-2 text-secondary"></i><a class="text-white">+44 0774 1663 860</a></small>
+                        <a href="{% url 'privacy_policy' %}" class="text-white"><small class="fas fa-bars me-2 text-secondary"> Privacy Policy</small></a>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-0">
+                <nav class="navbar navbar-light bg-white navbar-expand-xl">
+                    <a href=" / " class="navbar-brand p-0">
+                        <img class="logo mb-50" src="{% static 'img/logo1.jpeg' %}" width="250" height="103" alt="Logo">
+                        
+                    </a>
+                    <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-primary"></span>
+                    </button>
+                    <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
+                        <div class="navbar-nav mx-auto">
+                            <strong><a href=" / " class="nav-item nav-link active">Home</a></strong>
+                            <strong><a href="{% url 'about' %}" class="nav-item nav-link">Know About Us</a></strong>
+                            <strong><a href="{% url 'shop' %}" class="nav-item nav-link">Shop</a></strong>
+                            {% if user.is_authenticated %}
+                            <strong><a href="{% url 'logout' %}" class="nav-item nav-link">LogOut</a></strong>
+                            {% else %}
+                            <strong><a href="{% url 'vendor_register' %}" class="nav-item nav-link">Be A Vendor</a></strong>
+                            {% endif %} 
+                            <strong><a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a></strong>
+                        </div>
+                        <div class="d-flex m-3 me-0">
+                            <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal">
+                                <i class="fas fa-search text-primary"></i>
+                            </button>
+                            <a class="position-relative me-4 my-auto">
+                                <i class="fa fa-shopping-bag fa-2x"></i>
+                                <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">
+                                    {% if cart_products %}
+                                        {{ cart_products|length }}
+                                    {% else %}
+                                        0
+                                    {% endif %}
+                                </span>
+                            </a>
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'logout' %}" class="my-auto">
+                            {% else %}
+                            <a href="{% url 'vendor_register' %}" class="my-auto">
+                            <i class="fas fa-user fa-2x"></i>
+                            {% endif %} 
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar End -->
+
+
+        <!-- Modal Search Start -->
+        
+        <!-- Modal Search End -->
+
+
+        <!-- Single Page Header start -->
+        <div class="container-fluid page-header py-5">
+            <h1 class="text-center text-white display-6">Privacy Statement</h1>
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href=" / ">Home</a></li>
+            </ol>
+        </div>
+        <!-- Single Page Header End -->
+
+
+        <!-- 404 Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <img src="{% static 'assets/img/logo1.jpeg' %}" width="150" height="150" object-fit="cover" alt="">
+                        <h1 class="display-1">Afroblend</h1>
+                        <h1 class="mb-4">CUSTOMER AGREEMENT</h1>
+                        <p class="mb-4">
+                            </p></strong><br>
+                        <strong><p class="mb-4">
+                            Welcome to FreshDirect. PLEASE READ THE FOLLOWING TERMS OF USE AND DISCLAIMER CAREFULLY BEFORE USING OUR WEBSITE OR OUR MOBILE APPLICATIONS.
+                            
+                            This Customer Agreement (the "Agreement") is an agreement between you and Afroblend, 
+                             & its affiliates ("Afroblend") that states the terms and conditions under which you may use our website (the "Site"), 
+                            (the Site  "Platform") and receive Afriblend service, 
+                            which includes processing and delivery (or arranging for delivery) of product orders (the "Afroblend Service"). 
+                            Your use of the Afroblend Service and the Platform constitutes your agreement to the terms and conditions set forth below. 
+                            If you do not agree with all of the terms and conditions, do not use the Platform or the Afroblend Service.</p></strong>
+                        <strong><p class="mb-4">
+                            Afroblend Satisfaction Guarantee
+                            All of our products and services are backed by a 100% customer satisfaction guarantee. If you are dissatisfied for any reason, 
+                            contact us via e-mail at info@afroblend.co.uk or send us a message from the "Contact page" section of the Platform.
+                            For grocery or perishable products, you have up to seven (7) days after delivery, 
+                             — whichever is earlier — to contact us about the products. For frozen products, 
+                            you have up to twenty-one (10) days after delivery to contact us about the products. 
+                            Afroblend may require the return of the product with which you are dissatisfied before we substitute an acceptable item or issue a credit voucher.   
+                            
+                            </p></strong>
+                        <strong><p class="mb-4">
+                            Contact information, such as name, telephone number and postal and email address;
+                            Account information, such as login information, account preferences and other account details;
+                            Payment information, including name, billing and delivery address, and payment card details;
+                            Transaction and information, such as purchase history;
+                            Demographic information and interests, such as household income and shopping preferences;
+                            Geolocation information.
+                            </p></strong>
+                        <strong><p class="mb-4">
+                            1. Afroblend Service - Managing Your Orders
+                            1.1. Ordering through the Platform. Orders must be received before posted cutoff times for a given delivery (see Delivery of Products below for details). Available delivery date and time windows and associated delivery fees and promotions will be shown during the ordering process. Delivery timeslots are available on a first-come first-served basis. To view delivery and cutoff times, visit the Delivery Info section of the Platform. Note that modified orders are subject to price changes and a change of a delivery date may not guarantee the availability of your desired items.
+
+                            You may cancel orders via the contact page or sending and email 30mins after order using info@afroblend.co.uk. Please see the "Contact Us" section of the Platform for Customer Service hours.
+
+                            1.2. Price, Availability and Substitutions. Afroblend strives to provide you with great prices compared to the competition near your delivery address, and certain items may be priced differently depending on your last delivery address or the address you choose before placing items in your cart. We receive fresh products every day to assure you the highest quality. Due the perishable nature of our products, certain products may be unavailable due to market conditions beyond our control or quality that is below our standards. If we have an item that's very similar to the item you ordered, we reserve the right to make item substitutions. If you're not happy with the substitution, please email us at info@afroblend.co.uk. If we are unable to fulfill your entire order with the items you order or appropriate substitutions, we will use reasonable efforts to contact you prior to delivery (which may include notice in your confirmation email). Once you complete checkout, your price, or price per pound/ounce (when applicable), is guaranteed unless you placed an order for an item where we have inadvertently listed an incorrect price. In those circumstances, we reserve the right to cancel undelivered orders for such incorrectly priced products; we will contact you immediately in such circumstances, and, of course, your payment method will not be charged.
+
+                            Please note: we reserve the right to limit your order or the quantity of a particular product that you may order.
+
+                            1.3. Delivery Fee. A delivery fee may be added to your order. Any such fee is not a gratuity for the delivery personnel who delivers or is otherwise involved with the delivery of your order and will not be given to any such delivery personnel as a gratuity.
+                            </p></strong>
+                        <strong><p class="mb-4">   
+                            
+                            
+                            
+                            
+                            </p></strong>
+                        <strong><p class="mb-4">
+                            Warranty Disclaimer; Limitation of Liability; Indemnification
+                            6.1. YOU EXPRESSLY AGREE THAT USE OF THE Afroblend SERVICE, THE PLATFORM, AND THE INTERNET IS ENTIRELY AT YOUR OWN RISK. THE FRESHDIRECT SERVICE, THE PLATFORM, AND ITS CONTENTS ARE PROVIDED ON AN "AS IS," "AS AVAILABLE" BASIS. TO THE EXTENT PERMITTED BY APPLICABLE LAW, AFROBLEND DISCLAIMS ALL REPRESENTATIONS AND WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, WITH RESPECT TO THE AFROBLEND SERVICE, THE PLATFORM, OR ITS CONTENTS OR WITH RESPECT TO ANY INFORMATION, SERVICES, AND PRODUCTS PROVIDED THROUGH OR IN CONNECTION WITH THE AFROBLEND SERVICE; AFROBLEND DOES NOT ADOPT ANY REPRESENTATION OR WARRANTY OF ANY MANUFACTURER OR MERCHANT OF ANY SUCH INFORMATION, SERVICE, OR PRODUCTS. AFROBLEND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND AS TO THE AVAILABILITY, RELIABILITY, CORRECTNESS, ACCURACY, CONTENT, OR OTHERWISE OF ANY INFORMATION, SERVICES, OR PRODUCTS OBTAINED THROUGH THE PLATFORM OR THE FRESHDIRECT SERVICES. AFROBLEND DOES NOT WARRANT THAT THE FUNCTIONS PROVIDED BY THE PLATFORM WILL BE UNINTERRUPTED OR ERROR FREE, THAT DEFECTS WILL BE CORRECTED, OR THAT THIS PLATFORM OR THE SERVER THAT MAKES IT AVAILABLE IS FREE FROM VIRUSES OR OTHER HARMFUL COMPONENTS.
+                            
+                            6.2. NEITHER AFROBLEND NOR ANY OF ITS DIRECTORS, EMPLOYEES, SHAREHOLDERS, AFFILIATES, AGENTS, REPRESENTATIVES, JOINT VENTURE PARTIES, INDEPENDENT CONTRACTORS, THIRD-PARTY INFORMATION PROVIDERS, MERCHANTS, OR LICENSORS (COLLECTIVELY, "AFROBLEND PARTIES") SHALL BE LIABLE, IN CONTRACT OR IN TORT, FOR ANY DAMAGES OF ANY KIND, INCLUDING, WITHOUT LIMITATION, COMPENSATORY, DIRECT, INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES; LOSS OF DATA, INCOME, OR PROFIT; OR LOSS OR DAMAGE TO PROPERTY, ARISING OUT OF OR IN CONNECTION WITH THE USE OF, OR THE INABILITY TO USE, THE PLATFORM, THE AFROBLEND SERVICE, OR THE INTERNET. AFROBLEND'S LIABILITY SHALL BE LIMITED TO PROVIDING YOU WITH A REFUND FOR ANY PRODUCT THAT IS RETURNED. YOUR SOLE AND EXCLUSIVE REMEDY HEREUNDER SHALL BE FOR YOU TO DISCONTINUE YOUR USE OF THE AFROBLEND SERVICE AND TO TERMINATE THIS AGREEMENT. AFROBLEND RESERVES THE RIGHT TO LIMIT YOUR ORDER OR THE QUANTITY OF A SPECIFIC PRODUCT YOU MAY ORDER. BECAUSE SOME STATES OR JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL, INCIDENTAL, SPECIAL OR SPECIAL DAMAGES OR OF IMPLIED WARRANTIES, IN SUCH STATES AND JURISDICTIONS LIABILITY IS LIMITED TO THE GREATEST EXTENT PERMITTED BY LAW.</p></strong>
+                        <a class="btn border-secondary rounded-pill py-3 px-5" href="/">Go Back To Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 404 End -->
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
+            <div class="container py-5">
+                <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
+                    <div class="row g-4">
+                        <div class="col-lg-3">
+                            <a href="#">
+                                <h1 class="text-primary mb-0">Afroblend</h1>
+                                <p class="text-secondary mb-0">Fresh products</p>
+                            </a>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mx-auto">
+                                <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="number" placeholder="Your Email">
+                                <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="d-flex justify-content-end pt-3">
+                                <a class="btn  btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-youtube"></i></a>
+                                <a class="btn btn-outline-secondary btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-item">
+                            <h4 class="text-light mb-3">Why People Like us!</h4>
+                            <p class="mb-4">We are fast, reliaeble and efficient</p>
+                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="d-flex flex-column text-start footer-item">
+                            <h4 class="text-light mb-3">Shop Info</h4>
+                            <a class="btn-link" href="{% url 'about' %}">About Us</a>
+                            <a class="btn-link" href="{% url 'contact' %}">Contact Us</a>
+                            <a class="btn-link" href="{% url 'privacy_policy' %}">Privacy Policy</a>
+                            <a class="btn-link" href="{% url 'terms' %}">Terms & Condition</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="d-flex flex-column text-start footer-item">
+                            <h4 class="text-light mb-3">Afroblend</h4>
+                            <a class="btn-link" href="{% url 'shop' %}">Shop</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-item">
+                            <h4 class="text-light mb-3">Contact Us</h4>
+                            <p>Address: Quarter 19 GRA Nsukka, Enugu, Nigeria</p>
+                            <p>Email: info@afroblend.co.uk</p>
+                            <p>Phone: Tel: +4407741663860</p>
+                            <p>Payment Accepted</p>
+                            <img src="{% static 'img/payment.png' %}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div align="center" class="about-img-box">
+                        <img src="{% static 'assets/img/logo1.jpeg' %}" width="150" height="150" object-fit="cover" alt="">
+                      </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright bg-dark py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <span class="text-light"><a href="afroblend.co.uk"><i class="fas fa-copyright text-light me-2"></i>Afroblend</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 my-auto text-center text-md-end text-white">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.add-to-cart-btn').click(function() {
+                var productId = $(this).data('product-id');
+                $.ajax({
+                    url: '/add_to_cart/' + productId + '/',
+                    method: 'GET',
+                    success: function(response) {
+                        alert('Product added to cart successfully!');
+                    },
+                    error: function(xhr, status, error) {
+                        alert('Error adding product to cart!');
+                    }
+                });
+            });
+        });
+        </script>
+    </body>
+
+</html>
